@@ -11,3 +11,5 @@ members = [".", "parser"]
 
 [dependencies]
 rustpython-parser = {path = "parser", version = "0.1.1"}
+clap = "2.33"
+colored = "*"

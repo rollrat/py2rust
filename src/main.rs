@@ -1,5 +1,5 @@
 //! This code is a part of py2rust project.
-//! Copyright (C) 2019. rollrat. Licensed under the MIT Licence.
+//! Copyright (C) 2019. py2rust developers. Licensed under the MIT Licence.
 
 extern crate clap;
 extern crate colored;
@@ -11,6 +11,8 @@ use colored::*;
 use std::fs;
 use std::path::Path;
 use std::process::exit;
+
+pub mod python;
 
 fn main() {
     let app = App::new("py2rust");

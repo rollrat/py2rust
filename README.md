@@ -1,8 +1,13 @@
 # py2rust
 
-Python to Rust Compiler
+`py2rust` is a transpiler that converts `Python` to `Rust`.
 
-This is not a python interpeter.
+## Documents
 
-## Motivation
+Design
 
+https://github.com/rollrat/py2rust/blob/master/doc/design.md
+
+Development
+
+https://github.com/rollrat/py2rust/blob/master/doc/dev.md

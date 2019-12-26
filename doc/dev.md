@@ -53,7 +53,27 @@ https://docs.python.org/3/library/stdtypes.html
 
 #### 2.1.1. Type Trace
 
+If the type is not specified at the same time as the declaration, it must be marked with de-reference action.
 
+``` python
+Score = None # <= Cannot be determined type at this time.
+
+# If Block -- Start
+if Grade == 'A':
+  Score = 4.0
+elif Grade == 'B':
+  Score = 3.4
+else:
+  Score = 2.0
+# If Block -- End
+
+# Still donot have to know the type of Score.
+
+print(f'{}'.format(Score)) # Now we must know what Score type is.
+                           # and propagate type and lifetime to where it is first used.
+```
+
+When analyzing If statement, we can pass the type information needed to infer the type of `Score`.
 
 ### 2.2. Dynamic Type Inference
 

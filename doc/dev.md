@@ -51,6 +51,10 @@ https://docs.python.org/3/library/stdtypes.html
 
 ### 2.1. Static Type Inference
 
+#### 2.1.1. Type Trace
+
+
+
 ### 2.2. Dynamic Type Inference
 
 ``` python
@@ -60,6 +64,8 @@ def iff(x, a, b):
   else:
     return b
 Z = iff(5, 0, "0")
+
+C = any_function(Z, ...)
 ```
 
 What is return type of `iff` function?
@@ -70,18 +76,23 @@ The return type of the `iff` function cannot be determined at compile time.
 Therefore, at compile time, the function's execution path must be analyzed to break the function like this.
 
 ``` python
-Z = None
+C = None
 if 5 == 0:
-  Z = 0
+  C = any_function(0: i32, ...)
 else:
-  Z = "0"
+  C = any_function("0": &str, ...)
 
-C = any_function(Z, ...)
+print(f'{}'.format(C))
 ```
 
 Nevertheless, it can be seen that the type of `Z` was not determined.
 Now we need to find all the parts where Z is used and recursively break up the statements.
 Since inlining code by analyzing all the control paths(CFG) of a function is very expensive, so it is assumed that a function has only one return type, and the symbolic exeuction is performed only in special cases.
+
+#### 2.2.2. Type Capsulation
+
+``` python
+```
 
 ### 2.3. Exception Handling
 

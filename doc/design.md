@@ -17,6 +17,10 @@ For example, to use `LLVM` in `python`, we need the python-llvm wrapping library
 and to use python in `C++` you need a virtual machine.
 In the latter case, we will use most of them to run simple scripts that donnot need performance.
 
+You may be wondering why creating a transpiler is important despite 
+the existence of virtual machines or wrapping libraries.
+
+
 ---
 
 # Design Specification of py2rust
@@ -139,7 +143,7 @@ Since inlining code by analyzing all the control paths(CFG) of a function is ver
 
 ### 2.4. Lifetime Checker
 
-### 2.5. Multi-thread Handling
+### 2.5. Synchronization
 
 ## 3. Rust Codegen
 
@@ -158,6 +162,10 @@ And, the format of `regular expressions` used in `python` is different from `rus
 #### 3.1.2. Reference Table Autogen
 
 There is a difficulty in automating because the reference table has a constraint that must be written `logically`.
+
+##### 3.1.2.1. API Level Semantic Analysis
+
+
 
 #### 3.1.3. Pattern Matching
 

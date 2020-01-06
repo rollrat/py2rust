@@ -3,22 +3,31 @@
 
 use std::collections::HashMap;
 
-trait PythonValue {
-  fn line() -> u32;
-  fn column() -> u32;
-  fn parent() -> &PythonValue;
-  fn name() -> String;
-}
-
 struct PythonDebugInfo {
   line: u32,
   column: u32,
   moduleId: u32,
 }
 
-struct PythonValue {
-  parent: &PythonValue,
+impl PythonDebugInfo {
+  fn new(line: u32, column: u32, moduleId: u32) -> Self {
+    PythonDebugInfo { line, column, moduleId }
+  }
+  fn line(&self) -> u32 { self.line }
+  fn column(&self) -> u32 { self.column }
+  fn moduleId(&self) -> u32 { self.moduleId }
+}
+
+struct PythonValue<'a> {
+  debugInfo: PythonDebugInfo,
+  parent: &'a PythonValue<'a>,
   name: String
+}
+
+impl PythonValue<'_> {
+  fn new<'a>(line: u32, column: u32, moduleId: u32, parent: &'a PythonValue, name: String) -> Self {
+    PythonValue { debugInfo: PythonDebugInfo{line, column, moduleId}, parent, name }
+  }
 }
 
 struct PythonImport {

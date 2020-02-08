@@ -22,9 +22,7 @@ Rust can be used in many development areas. (System, WebAssembly, Android, …)
 
 Using Python with Rust together allows for high productivity, easy maintenance, stable static linking, LLVM optimizations, or AOT compilation features.
 
-## Future
-
-Finding `memory leaks` is a very difficult problem.
+Furthermore, Finding `memory leaks` is a very difficult problem.
 `Rust` allows you to manage memory safely and optimally.
 You can use `Rust` model to convert existing code to code that does not have a `memory leak`.
 The success of this project is no different than finding a way to solve `memory leaks` in existing languages.

@@ -10,5 +10,5 @@ edition = "2018"
 #members = [".", "parser"]
 
 [dependencies]
-clap = "2.33"
+clap = "2.*"
 colored = "*"

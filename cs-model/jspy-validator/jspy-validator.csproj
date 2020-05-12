@@ -6,4 +6,18 @@
     <RootNamespace>jspy_validator</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Analysis\Alias\" />
+    <Folder Include="Analysis\Liveness\" />
+    <Folder Include="Analysis\Scope\" />
+    <Folder Include="Analysis\Type\" />
+    <Folder Include="Javascript\" />
+    <Folder Include="Python\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Esprima" Version="1.0.1270" />
+    <PackageReference Include="IronPython" Version="2.7.10" />
+  </ItemGroup>
+
 </Project>
